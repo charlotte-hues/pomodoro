@@ -49,3 +49,8 @@ function play() {
     isPaused === true ? id = setInterval(startTimer, 1000) : checkActive();
 }
 
+function stop() {
+    clearInterval(id);
+    sessionTime.active = false;
+}
+
