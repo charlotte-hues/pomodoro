@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <head>
-
+<title>Pomodoro</title>
+<link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
+
 <body>
 
-    
-</body>
 
+<label for="session">Session</label>
+<input type="number" id="session" name="session" min="1" max="60" value="25">
+<label for="break">Break</label>
+<input type="number" id="break" name="session" min="1" max="60" value="5">
+     
+
+<progress id="time-bar" max="100" value="50"></progress>
+
+
+
+
+<script src="scripts/script.js"></script>
+</body>
 
 </html>
