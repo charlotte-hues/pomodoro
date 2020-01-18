@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    border-style: none;
+    background: none;
+    color: var(--primary);
+}
+
+:root {
+    --primary: #ffc000;
+    --secondary: #ffbf002a;
+    --hover: #D94A64;
+    --background: #0D0D0D;
+
+    --divider: 20px;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:80%;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    height: 32px;
+    margin: 0 20px;
+}
+
+h3 {
+    height: 32px;
+    margin: 0 20px;
+}
+
+.divider {
+    width: 100%;
+    height: var(--divider);
+    border-bottom: 2px dashed var(--secondary);
+    margin-bottom: var(--divider);
+}
+
+#pomodoro-clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+}
+
+.timer-settings {
+    display: flex;
+}
+
+.timer-settings > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.times {
+    display: flex;
+    margin: 0 20px;
+    align-items: center;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+button>svg {
+    fill: var(--primary);
+}
+
+button>svg:hover {
+    fill: var(--hover);
+    cursor: pointer;
+}
+
+
+
+
+
+
