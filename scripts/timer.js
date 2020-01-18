@@ -14,8 +14,8 @@ let breakTime = {
 
 let currentMinute = sessionTime.minute;
 let currentSecond = sessionTime.second;
-let isPaused = false;
-let id = setInterval(startTimer, 1000);
+let isPaused = true;
+let id;
 
 function checkActive() {
 	clearInterval(id);
@@ -32,6 +32,7 @@ function switchTimer(active, inactive) {
 }
 
 function startTimer() {
+    isPaused = false;
     console.log(currentMinute + ":" + currentSecond);
     if (currentMinute > 0 && currentSecond === 0) {
         currentMinute -= 1;
@@ -41,11 +42,16 @@ function startTimer() {
 }
 
 function pause() {
+    pauseButton.classList.toggle('inactive');
+    playButton.classList.toggle('inactive');
     clearInterval(id);
     isPaused = true;
 }
 
 function play() {
+    pauseButton.classList.toggle('inactive');
+    playButton.classList.toggle('inactive');
+    console.log(this);
     isPaused === true ? id = setInterval(startTimer, 1000) : checkActive();
 }
 
@@ -53,4 +59,11 @@ function stop() {
     clearInterval(id);
     sessionTime.active = false;
 }
+
+
+const playButton = document.getElementById('play-button');
+const pauseButton = document.getElementById('pause-button');
+
+playButton.addEventListener('click', play);
+pauseButton.addEventListener('click', pause);
 

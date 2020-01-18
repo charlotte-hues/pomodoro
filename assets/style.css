@@ -91,6 +91,9 @@ button>svg:hover {
     cursor: pointer;
 }
 
+.inactive {
+    display: none;
+}
 
 
 
