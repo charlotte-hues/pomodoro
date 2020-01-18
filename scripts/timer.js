@@ -51,8 +51,8 @@ function pause() {
 }
 
 function play() {
-    pauseButton.classList.toggle('inactive');
-    playButton.classList.toggle('inactive');
+    pauseButton.classList.remove('inactive');
+    playButton.classList.add('inactive');
     stopButton.classList.remove('disabled');
     skipButton.classList.remove('disabled');
     console.log(this);
@@ -61,6 +61,11 @@ function play() {
 
 function stop() {
     clearInterval(id);
+    pauseButton.classList.add('inactive');
+    playButton.classList.remove('inactive');
+    stopButton.classList.add('disabled');
+    skipButton.classList.add('disabled');
+    timerDisplay.innerHTML = sessionTime.minute + ":" + sessionTime.second;
     sessionTime.active = false;
 }
 
@@ -73,6 +78,7 @@ const skipButton = document.getElementById('skip');
 playButton.addEventListener('click', play);
 pauseButton.addEventListener('click', pause);
 skipButton.addEventListener('click', checkActive);
+stopButton.addEventListener('click', stop);
 
 const workUp = document.querySelector('.session .up');
 const workDown = document.querySelector('.session .down');
