@@ -48,6 +48,14 @@ h3 {
 
 #time-left {
     height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#time-left>h2 {
+    width: 100%;
 }
 
 .divider {

@@ -12,6 +12,7 @@ const timeAdjusters = document.querySelectorAll('.times button');
 const workTimeDisplay = document.querySelector('.session h2');
 const breakTimeDisplay = document.querySelector('.break h2');
 const timerDisplay = document.querySelector('#time-left h1');
+const sessionDisplay = document.querySelector('#time-left h2');
 
 function checkActive() {
     clearInterval(id);
@@ -24,10 +25,12 @@ function switchTimer(active, inactive) {
     if (skipButton.classList.contains('disabled')) {return;}
 	currentMinute = active.minute;
     currentSecond = active.second;
+    timerDisplay.innerHTML = formatTime();
 	active.active = true;
     inactive.active = false;
     pauseButton.classList.remove('inactive');
     playButton.classList.add('inactive');
+    sessionTime.active === true ? sessionDisplay.innerHTML = 'work' : sessionDisplay.innerHTML = 'break';
 	id = setInterval(startTimer, 1000);
 }
 
@@ -49,6 +52,7 @@ function formatTime() {
 }
 
 function pause() {
+    sessionDisplay.innerHTML = 'paused';
     pauseButton.classList.add('inactive');
     playButton.classList.remove('inactive');
     clearInterval(id);
@@ -61,6 +65,7 @@ function play() {
     stopButton.classList.remove('disabled');
     skipButton.classList.remove('disabled');
     timeAdjusters.forEach(button => button.classList.add('disabled'));
+    sessionTime.active === true ? sessionDisplay.innerHTML = 'work' : sessionDisplay.innerHTML = 'break';
     isPaused === true ? id = setInterval(startTimer, 1000) : checkActive();
 }
 
@@ -73,7 +78,8 @@ function stop() {
     timeAdjusters.forEach(button => button.classList.remove('disabled'));
     currentMinute = sessionTime.minute;
     currentSecond = sessionTime.second;
-    timerDisplay.innerHTML = formatTime(); 
+    timerDisplay.innerHTML = formatTime();
+    sessionDisplay.innerHTML = 'pomodoro';
     sessionTime.active = false;
 }
 
