@@ -17,7 +17,7 @@ function checkActive() {
     clearInterval(id);
     currentMinute = sessionTime.minute;
     currentSecond = sessionTime.second;
-	sessionTime.active ? switchTimer(breakTime, sessionTime) : switchTimer(sessionTime, breakTime);
+	sessionTime.active === true ? switchTimer(breakTime, sessionTime) : switchTimer(sessionTime, breakTime);
 }
 
 function switchTimer(active, inactive) {
@@ -78,7 +78,6 @@ function stop() {
 }
 
 function adjustTime() {
-    console.log(currentMinute);
     if (this.classList.contains('disabled')) {return;}
     switch(this.dataset.parent + this.classList) {
         case 'breakup':
@@ -97,7 +96,7 @@ function adjustTime() {
         case 'sessiondown':
             sessionTime.minute -= 1;
     }
-    currentMinute = parseInt(workTimeDisplay.innerHTML);
+    currentMinute = sessionTime.minute;
     currentSecond = 0;
     breakTimeDisplay.innerHTML = breakTime.minute;
     workTimeDisplay.innerHTML = sessionTime.minute; 
@@ -140,6 +139,7 @@ let id;
 
 breakTimeDisplay.innerHTML = breakTime.minute;
 workTimeDisplay.innerHTML = sessionTime.minute;
+
 timerDisplay.innerHTML = formatTime(); 
 
 
