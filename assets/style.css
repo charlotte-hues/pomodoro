@@ -4,6 +4,7 @@
     border-style: none;
     background: none;
     color: var(--primary);
+    
 }
 
 :root {
@@ -82,8 +83,9 @@ h3 {
     justify-content: space-around;
 }
 
-
-
+button:focus {
+    outline: 0;
+}
 
 button>svg {
     fill: var(--primary);
@@ -100,7 +102,7 @@ button>svg:hover {
 
 .disabled>svg:hover {
     fill: var(--secondary);
-    cursor: not-allowed;
+    cursor: default;
 }
 
 .inactive {
