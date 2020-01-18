@@ -53,6 +53,8 @@ function pause() {
 function play() {
     pauseButton.classList.toggle('inactive');
     playButton.classList.toggle('inactive');
+    stopButton.classList.remove('disabled');
+    skipButton.classList.remove('disabled');
     console.log(this);
     isPaused === true ? id = setInterval(startTimer, 1000) : checkActive();
 }
@@ -65,9 +67,12 @@ function stop() {
 
 const playButton = document.getElementById('play-button');
 const pauseButton = document.getElementById('pause-button');
+const stopButton = document.getElementById('stop');
+const skipButton = document.getElementById('skip');
 
 playButton.addEventListener('click', play);
 pauseButton.addEventListener('click', pause);
+skipButton.addEventListener('click', checkActive);
 
 const workUp = document.querySelector('.session .up');
 const workDown = document.querySelector('.session .down');
