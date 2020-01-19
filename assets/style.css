@@ -13,49 +13,44 @@
     --hover: #D94A64;
     --background: #0D0D0D;
 
-    --divider: 50px;
+    --divider: 30px;
 }
 
 html {
+    height: 100%;
     background: var(--background);
 }
 body {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
 }
 
-#grid {
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-rows: 1fr minmax(70vh, 300px) 1fr;
-    grid-template-columns: 1fr minmax(60vh, 400px ) 1fr;
-}
-
 #pomodoro-clock {
-    grid-area: 2 / 2 / 3 / 3;
+    height: 100vh;
+    padding: 10vh 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 h1 {
-    font-size: 10vh;
+    font-size: 18vh;
     margin: 0;
 }
 
 h2 {
-    height: 32px;
-    width: 26px;
+    font-size: 6vh;
     text-align: center;
     margin: 0 20px;
 }
 
 h3 {
-    height: 32px;
+    text-align: center;
+    font-size: 2.5vh;
     margin: 0 20px;
 }
 
@@ -65,10 +60,6 @@ h3 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
-
-#time-left>h2 {
-    width: 100%;
 }
 
 .divider {
@@ -86,15 +77,32 @@ h3 {
 
 .timer-settings > * {
     display: flex;
+    width: 90%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
+/* .timer-settings > * > * {
+    background-color: lightcoral;
+    width: 90%;
+    
+
+}
+
+.timer-settings > * > * > * {
+    background-color: lavender;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+} */
+
 .times {
     display: flex;
     margin: 0 20px;
     align-items: center;
+    justify-content: space-between;
 }
 
 #controls {
@@ -108,6 +116,7 @@ button:focus {
 }
 
 button>svg {
+    height: 5vh;
     fill: var(--primary);
 }
 
