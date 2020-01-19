@@ -18,10 +18,12 @@
 
 html {
     height: 100%;
+    overflow: hidden;
     background: var(--background);
 }
 body {
     height: 100%;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,11 +31,11 @@ body {
 }
 
 #pomodoro-clock {
-    height: 100vh;
+    height: 100%;
     padding: 15vh 0 10vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -83,21 +85,6 @@ h3 {
     align-items: center;
 }
 
-/* .timer-settings > * > * {
-    background-color: lightcoral;
-    width: 90%;
-    
-
-}
-
-.timer-settings > * > * > * {
-    background-color: lavender;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-} */
-
 .times {
     display: flex;
     margin: 0 20px;
@@ -116,7 +103,7 @@ button:focus {
 }
 
 button>svg {
-    height: 5vh;
+    height: 7vh;
     fill: var(--primary);
 }
 
