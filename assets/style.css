@@ -30,16 +30,16 @@ body {
 
 #pomodoro-clock {
     height: 100vh;
-    padding: 10vh 0;
+    padding: 15vh 0 10vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 h1 {
     font-size: 18vh;
-    margin: 0;
+    margin: 2vh 0;
 }
 
 h2 {
